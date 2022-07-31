@@ -1,0 +1,9 @@
+những tham số cần set lên bản đồ khi vừa vào
+
+setGetDefaultValue:
+	- Điểm đi
+	- Điểm đến
+	- vị trí hiện tại ??
+setData:
+	- Các Station Location
+	- 

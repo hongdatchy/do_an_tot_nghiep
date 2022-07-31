@@ -1,0 +1,39 @@
+mở khoá thì phải cập nhật trạng thái device
+
+nghiên cứu xem có gửi bản tin xác nhận hay không
+
+validate register
+
+xem cái yc tuấn gửi trong mess
+
+
+người dùng : đăng kí -> login -> quét mã QR -> thuê xe -> lái xe đạp(a ko biết là lúc demo ntn)
+ -> nhấn kt chuyến đi trên app
+
+người admin: login -> quản lý (tìm, thêm , sửa xoá) user, bike, ... (tất cả các bảng trong database)
+
+check status divice xong mới cho rent bike
+
+start time va end time đẩy lên contract
+
+
+
+
+thông báo cho app bằng mqtt
+
+---- bản tin update path và lat long cho device----
+upstream/<bikeId>
+p,HHmmss,lat,lon 
+p,232020,20.333333,106.22221
+(p: positon)
+
+---- bản tin mở khoá từ server gửi xuống device và app
+downstream/<bikeId>
+op 
+(op: open)
+
+---- bản tin đóng khoá từ device gửi lên server và app
+upstream/<bikeId>
+cl 
+(cl: close)
+
