@@ -1,0 +1,32 @@
+ssh hieutt@155.248.164.224
+pass 1
+
+create database parking_space_and_bike_share;
+use parking_space_and_bike_share;
+
+source cho mysql
+source /home/hieutt/hongdat/do_an_tn/back_up_db.sql
+
+java -jar -Djava.net.preferIPv4Stack=true demo-0.0.1-SNAPSHOT.jar
+ctrl + z + bg + disown
+
+sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 8080 -j ACCEPT
+sudo netfilter-persistent save
+
+xoá retain mqtt
+mosquitto_sub -u "sanslab" --pw "1" -t "upstream/#" --remove-retained --retained-only
+
+nếu send email trên local thành công mà lỗi trên server thì là lỗi này
+Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 534-5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbu
+534-5.7.14 VnHuVcXxBWVCrPYfSAoDibEWF7CqTe848WdzzpQoZ7fLf7Cug5LWzqhxpd08FLdJYeEp8
+534-5.7.14 NTH__byblBhQC7SpPuqdh-VAftYxjGK6UQb0UcxBSai0JCFEHOwUyU9eY6YRfIkH>
+534-5.7.14 Please log in via your web browser and then try again.
+534-5.7.14  Learn more at
+534 5.7.14  https://support.google.com/mail/answer/78754 l4-20020a056a0016c400b004f79504ef9csm5506461pfc.3 - gsmtp
+--> sửa
+https://stackoverflow.com/questions/25341198/javax-mail-authenticationfailedexception-is-thrown-while-sending-email-in-java
+https://accounts.google.com/b/0/DisplayUnlockCaptcha
+
+sudo netstat -tulpn | grep LISTEN
+
+
